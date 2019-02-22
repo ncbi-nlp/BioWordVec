@@ -10,19 +10,19 @@ The details of related files are described as follows:
 Data: MeSH_graph.edgelist is the MeSH main-heading graph file.  MeSH_dic.pkl.gz is used to align the MeSH heading ids with mention words. Due to the limitation of the github, we only upload a sample PubMed corpus. The PubMed corpus and MeSH RDF data can be download from NCBI. 
  
 
-Prerequisites
+Prerequisites:
 
-* python 3.5
-* networkx 1.11
-* gensim 2.3
+python 3.5
+networkx 1.11
+gensim 2.3
 
 
-Usage
+Usage:
 
 User can use BioWordVec.py to automatically learn the biomedical word embedding based on PubMed text corpus and MeSH data.
 
 
-List of Contributors
+List of Contributors:
 
 Yijia  Zhang
 Qingyu Chen
