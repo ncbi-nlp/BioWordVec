@@ -7,7 +7,7 @@ This is research software, provided as is without express or implied warranties 
 
 The details of related files are described as follows:
 
-Data: MeSH_graph.edgelist is the MeSH main-heading graph file.  MeSH_dic.pkl.gz is used to align the MeSH heading ids with mention words. Due to the limitation of the github, we only upload a sample PubMed corpus. The PubMed corpus and MeSH RDF data can be download from NCBI. 
+Data: MeSH_graph.edgelist is the MeSH main-heading graph file. MeSH_dic.pkl.gz is used to align the MeSH heading ids with mention words. The PubMed corpus and MeSH RDF data can be download from NCBI. 
  
 
 Prerequisites:
