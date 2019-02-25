@@ -17,7 +17,7 @@ User can use BioWordVec.py to automatically learn the biomedical word embedding 
 
 We created two specialized, task-dependent sets of word embeddings “Bio-embedding-intrinsic” and “Bio-embedding-extrinsic” via setting the context window size as 20 and 5, respectively. The pre-trained BioWordVec data are freely available on [Figshare](https://doi.org/10.6084/m9.figshare.6882647 ). "Bio-embedding-intrinsic" is for intrinsic tasks and used to calculate or predict semantic similarity between words, terms or sentences. "Bio_embedding_extrinsic" is for extrinsic tasks and used as the input for various downstream NLP tasks, such as relation extraction or text classification. Both sets are in binary format and contain 2,324,849 distinct words in total. All words were converted to lowercase and the number of dimensions is 200.
 
-We use [UMNSRS](http://rxinformatics.umn.edu/SemanticRelatednessResources.html) datasets to evaluate the pre-trained word embeddings for medical word pair similarity.
+We used [UMNSRS](http://rxinformatics.umn.edu/SemanticRelatednessResources.html) datasets to evaluate the pre-trained word embeddings for medical word pair similarity.
 
 | Word embeddings       |UMNSRS-Sim  (Pearson score)        | UMNSRS-Sim  (Spearman score)  | UMNSRS-Rel  (Pearson score)           |UMNSRS-Rel  (Pearson score)  |
 | ------------- |:-------------:| -----:|:-------------:| -----:|
@@ -25,7 +25,7 @@ We use [UMNSRS](http://rxinformatics.umn.edu/SemanticRelatednessResources.html) 
 |[Chiu et al.](http://github.com/cambridgeltl/BioNLP-2016)     | 0.665     |  0.654|0.608      |  0.607|
 | BioWordVec (win20) | 0.667    |   0.657 |0.619    |    0.617 |
 
-We also use [BioCreative/OHNLP STS](https://sites.google.com/view/ohnlp2018/home) dataset to evaluate the pre-trained word embeddings on clinical sentence pair similarity. 
+We also used [BioCreative/OHNLP STS](https://sites.google.com/view/ohnlp2018/home) dataset to evaluate the pre-trained word embeddings on clinical sentence pair similarity. 
 
 | Similarity measures      |[Pyysalo et al.](http://http://evexdb.org/pmresources/vec-space-models/)        | [Chiu et al.](http://github.com/cambridgeltl/BioNLP-2016)   | BioWordVec (win20) |
 | ------------- |:-------------:| -----:|:-------------:|
