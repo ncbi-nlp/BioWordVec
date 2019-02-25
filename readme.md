@@ -17,7 +17,7 @@ User can use BioWordVec.py to automatically learn the biomedical word embedding 
 
 We created two specialized, task-dependent sets of word embeddings “Bio-embedding-intrinsic” and “Bio-embedding-extrinsic” via setting the context window size as 20 and 5, respectively. The pre-trained BioWordVec data are freely available on [Figshare](https://doi.org/10.6084/m9.figshare.6882647 ). "Bio-embedding-intrinsic" is for intrinsic tasks and used to calculate or predict semantic similarity between words, terms or sentences. "Bio_embedding_extrinsic" is for extrinsic tasks and used as the input for various downstream NLP tasks, such as relation extraction or text classification. Both sets are in binary format and contain 2,324,849 distinct words in total. All words were converted to lowercase and the number of dimensions is 200.
 
-We used [UMNSRS](http://rxinformatics.umn.edu/SemanticRelatednessResources.html) datasets to evaluate the pre-trained word embeddings for medical word pair similarity.
+We used [UMNSRS](http://rxinformatics.umn.edu/SemanticRelatednessResources.html) datasets to evaluate the pre-trained word embeddings on medical word pair similarity.
 
 | Word embeddings       |UMNSRS-Sim  (Pearson score)        | UMNSRS-Sim  (Spearman score)  | UMNSRS-Rel  (Pearson score)           |UMNSRS-Rel  (Pearson score)  |
 | ------------- |:-------------:| -----:|:-------------:| -----:|
