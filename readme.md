@@ -25,6 +25,14 @@ We use [UMNSRS](http://rxinformatics.umn.edu/SemanticRelatednessResources.html) 
 |[Chiu et al.](http://github.com/cambridgeltl/BioNLP-2016)     | 0.665     |  0.654|0.608      |  0.607|
 | BioWordVec (win20) | 0.667    |   0.657 |0.619    |    0.617 |
 
+We also use [BioCreative/OHNLP STS](https://sites.google.com/view/ohnlp2018/home) dataset to evaluate the pre-trained word embeddings on clinical sentence pair similarity. 
+
+| Similarity measures      |[Pyysalo et al.](http://http://evexdb.org/pmresources/vec-space-models/)        | [Chiu et al.](http://github.com/cambridgeltl/BioNLP-2016)   | BioWordVec (win20) |
+| ------------- |:-------------:| -----:|:-------------:|
+|Cosine    | 0.755| 0.757 |0.771 |
+|Euclidean     | 0.723     | 0.727|0.753 |
+| Block |   0.722 |0.727   |    0.752 |
+
 User can find more usage notes in our paper.
 
 
