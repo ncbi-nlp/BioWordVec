@@ -115,8 +115,8 @@ def main(args):
 				temp_list.append(mesh_dict[node])
 		new_walks.append(temp_list)
 
-	model = FastText(MySentences(new_walks,args.input_corpus), size=args.dimensions, window=args.windows, min_count=args.min_count, workers=args.workers,
-					 sg=args.sg, iter=args.iter)
+	model = FastText(MySentences(new_walks,args.input_corpus), window=args.windows, min_count=args.min_count, workers=args.workers,
+					 sg=args.sg) # size=args.dimensions, , iter=args.iter
 
 	model.save(args.output_model)
 
