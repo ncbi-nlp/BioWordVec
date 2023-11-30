@@ -11,25 +11,26 @@ from gensim.models import FastText
 import random
 import gzip
 import pickle as pkl
+import tqdm
 
 
 def parse_args():
 
 	parser = argparse.ArgumentParser()
 
-	parser.add_argument('--input_corpus', nargs='?', default='./data/pubmed_sample',
+	parser.add_argument('--input_corpus', nargs='?', default='/home/hambam/Desktop/workspace/S5/LSNN_project/BioWordVec/data/pubmed_sample',
 	                    help='Input biomedical corpus')
 
-	parser.add_argument('--input_mesh', nargs='?', default='./data/MeSH_graph.edgelist',
+	parser.add_argument('--input_mesh', nargs='?', default='/home/hambam/Desktop/workspace/S5/LSNN_project/BioWordVec/data/MeSH_graph.edgelist',
 						help='Input mesh knowledge')
 
-	parser.add_argument('--input_dic', nargs='?', default='./data/MeSH_dic.pkl.gz',
+	parser.add_argument('--input_dic', nargs='?', default='/home/hambam/Desktop/workspace/S5/LSNN_project/BioWordVec/data/MeSH_dic.pkl.gz',
 						help='Input mesh dic')
 
-	parser.add_argument('--output_model', nargs='?', default='./pubmed_mesh_test',
+	parser.add_argument('--output_model', nargs='?', default='/home/hambam/Desktop/workspace/S5/LSNN_project/BioWordVec/pubmed_mesh_test',
 	                    help='output of word vector model')
 
-	parser.add_argument('--output_bin', nargs='?', default='./pubmed_mesh_test.bin',
+	parser.add_argument('--output_bin', nargs='?', default='/home/hambam/Desktop/workspace/S5/LSNN_project/BioWordVec/pubmed_mesh_test.bin',
 						help='output of word vector bin file')
 
 	parser.add_argument('--dimensions', type=int, default=200,
@@ -107,7 +108,7 @@ def main(args):
 
 	node_set=set([])
 
-	for instance in walks:
+	for instance in tqdm.tqdm(walks, desc="Processing walks", total=len(walks)):
 		temp_list=[]
 		for node in instance:
 			node_set.add(node)
@@ -115,15 +116,17 @@ def main(args):
 				temp_list.append(mesh_dict[node])
 		new_walks.append(temp_list)
 
-	model = FastText(MySentences(new_walks,args.input_corpus), size=args.dimensions, window=args.windows, min_count=args.min_count, workers=args.workers,
-					 sg=args.sg, iter=args.iter)
-
+	print("Number of nodes in mesh: {}".format(len(node_set)))
+	print("Model training...")
+	model = FastText(MySentences(new_walks,args.input_corpus), window=args.windows, min_count=args.min_count, workers=args.workers,
+					 sg=args.sg, epochs=args.iter, vector_size=args.dimensions)
+	print("Model training finished.")
 	model.save(args.output_model)
-
+	print("Model saved.")
 	print(model)
 
 	model.wv.save_word2vec_format(args.output_bin, binary=True)
-
+	print("Bin file saved.")
 if __name__ == "__main__":
 	args = parse_args()
 	main(args)
